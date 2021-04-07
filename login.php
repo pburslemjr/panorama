@@ -1,7 +1,7 @@
 <?php 
 
 include('config.php');
-echo("Testing");
+
 
 
 session_start(); /* Starts the session */
