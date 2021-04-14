@@ -6,12 +6,12 @@ include('config.php');
 
 session_start(); /* Starts the session */
 
- /*Check Login form submitted*/ /*if(isset($_POST['Submit'])){
-$Username = isset($_POST['Username']) ? $_POST['Username'] : '';
-$Password = isset($_POST['Password']) ? $_POST['Password'] : '';
+ /*Check Login form submitted*/ if(isset($_POST['Submit'])){
+$username = isset($_POST['username']) ? $_POST['username'] : '';
+$password = isset($_POST['password']) ? $_POST['password'] : '';
 
 $query = $db_connection->prepare("SELECT * FROM users WHERE username=:Username");
-$query->bindParam("Username", $Username, PDO::PARAM_STR);
+$query->bindParam("username", $username, PDO::PARAM_STR);
 $query->execute();
 
 $result = $query->fetch(PDO::FETCH_ASSOC);
@@ -19,15 +19,15 @@ $result = $query->fetch(PDO::FETCH_ASSOC);
 if (!$result) {
 	$msg="<span style='color:red'>Invalid Login Details</span>";
 } else {
-if (password_verify($Password, $result['password'])) {
-$_SESSION['UserData']['Username']=$logins[$Username];
+if (password_verify($password, $result['password'])) {
+$_SESSION['users']['username']=$logins[$username];
 header("location:index.php");
 exit;
 } else {
 $msg="<span style='color:red'>Invalid Login Details</span>";
 }
 }
-*/
+*
 ?>
 <form action="" method="post" name="Login_Form">
   <table width="400" border="0" align="center" cellpadding="5" cellspacing="1" class="Table">
