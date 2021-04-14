@@ -7,6 +7,11 @@ exit;
 else{
     $name = $_SESSION['users']['username'];
 echo("Welcome, {$name}!");
+
 }
 ?>
+
+<form action="https://panorama-csce315.herokuapp.com/logout.php">
+    <input type="submit" value="Log Out" />
+</form>
 
