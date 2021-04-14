@@ -7,8 +7,8 @@ include('config.php');
 session_start(); /* Starts the session */
 
  /*Check Login form submitted*/ if(isset($_POST['Submit'])){
-$username = isset($_POST['username']) ? $_POST['username'] : '';
-$password = isset($_POST['password']) ? $_POST['password'] : '';
+$username = isset($_POST['Username']) ? $_POST['Username'] : '';
+$password = isset($_POST['Password']) ? $_POST['Password'] : '';
 
 $query = $db_connection->prepare("SELECT * FROM users WHERE username=:Username");
 $query->bindParam("username", $username, PDO::PARAM_STR);
