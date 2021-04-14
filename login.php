@@ -6,13 +6,14 @@ include('config.php');
 
 session_start(); /* Starts the session */
 
-if(isset($_POST['submit'])&&!empty($_POST['submit'])){
+if(isset($_POST['Submit'])&&!empty($_POST['Submit'])){
     
-  $hashpassword = md5($_POST['Password']);
-  $sql ="select * from public.user where username = '".pg_escape_string($_POST['Username'])."' and password ='".$hashpassword."'";
+  $usern = $_POST['Username'];
+  $hashpassword = $_POST['Password'];
+  $sql ="SELECT * FROM public.users WHERE username = '$usern' AND password = md5('$hashpassword');";
   $data = pg_query($db_connection,$sql); 
   $login_check = pg_num_rows($data);
-  if($login_check > 0){ 
+  if($login_check != 1){ 
       
       echo "Login Successfully";  
       $msg="<span style='color:red'>Invalid Login Details</span>";  
@@ -22,6 +23,12 @@ if(isset($_POST['submit'])&&!empty($_POST['submit'])){
       $msg="<span style='color:red'>Invalid Login Details</span>";
   }
 }
+else
+{
+  echo("SUBMIT was not set!");
+}
+
+
  /*Check Login form submitted*//* if(isset($_POST['Submit'])) {
 $username = isset($_POST['Username']) ? $_POST['Username'] : '';
 $password = isset($_POST['Password']) ? $_POST['Password'] : '';
