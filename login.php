@@ -15,6 +15,13 @@ $query->bindParam("username", $username, PDO::PARAM_STR);
 $query->execute();
 
 $result = $query->fetch(PDO::FETCH_ASSOC);
+$num_rows = pg_num_rows($result);
+if ($num_rows > 0)
+{
+  echo "Number of rows over 0";
+} else {
+  echo "Less than 1 rows";
+}
 
 if (!$result) {
 	$msg="<span style='color:red'>Invalid Login Details</span>";
