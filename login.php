@@ -10,7 +10,7 @@ if(isset($_POST['Submit'])&&!empty($_POST['Submit'])){
   echo(" SUBMIT was set!");
   $usern = $_POST['Username'];
   $hashpassword = $_POST['Password'];
-  $sql ="SELECT * FROM public.users WHERE username = '$usern' AND password = md5('$hashpassword');";
+  $sql ="SELECT * FROM public.users WHERE username = '".$usern."' AND password = '".md5($hashpassword)."';";
   echo(" Running command: $sql");
   $data = pg_query($db_connection,$sql); 
   $login_check = pg_num_rows($data);
