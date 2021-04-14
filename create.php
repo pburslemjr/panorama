@@ -9,18 +9,30 @@ session_start(); /* Starts the session */
 if(isset($_POST['Submit'])&&!empty($_POST['Submit'])){
   echo(" SUBMIT was set!");
   $usern = $_POST['Username'];
-  $hashpassword = $_POST['Password'];
+  $password = $_POST['Password'];
   $confirm = $_POST['Confirm'];
   $email = $_POST['Email'];
+  // Check password strength
+    $uppercase = preg_match('@[A-Z]@', $password);
+    $lowercase = preg_match('@[a-z]@', $password);
+    $number    = preg_match('@[0-9]@', $password);
+    $specialChars = preg_match('@[^\w]@', $password);
+
+    if(!$uppercase || !$lowercase || !$number || !$specialChars || strlen($password) < 7) {
+        
+        $msg ="<span style='color:red'>Password should be at least 7 characters in length and should include at least one upper case letter, one number, and one special character.</span>";
+    }else{
+        
+    
 
   if ($confirm != $hashpassword)
   {
-    $msg="<span style='color:res'>Passwords Must Match!</span>";
+    $msg="<span style='color:red'>Passwords Must Match!</span>";
   }
   else
   {
   $sql = "INSERT INTO public.users (username, password, email)
-    VALUES ('".$usern."', '".sha1($hashpassword)."', '".$email."');";
+    VALUES ('".$usern."', '".sha1($password)."', '".$email."');";
   
   
     pg_query($db_connection,$sql); 
@@ -29,6 +41,7 @@ if(isset($_POST['Submit'])&&!empty($_POST['Submit'])){
     exit;
        
   
+}
 }
 }
 ?>
