@@ -12,6 +12,9 @@ if(isset($_POST['Submit'])&&!empty($_POST['Submit'])){
   $password = $_POST['Password'];
   $confirm = $_POST['Confirm'];
   $email = $_POST['Email'];
+
+  
+  
   // Check password strength
     $uppercase = preg_match('@[A-Z]@', $password);
     $lowercase = preg_match('@[a-z]@', $password);
@@ -20,7 +23,7 @@ if(isset($_POST['Submit'])&&!empty($_POST['Submit'])){
 
     if(!$uppercase || !$lowercase || !$number || !$specialChars || strlen($password) < 7) {
         
-        $msg ="<span style='color:red'>Password should be at least 7 characters in length and should include at least one upper case letter, lower case letter, one number, and one special character.</span>";
+        $msg ="<span style='color:red'>New Password should be at least 7 characters in length and should include at least one upper case letter, lower case letter, one number, and one special character.</span>";
     }else{
         
     
@@ -35,8 +38,22 @@ if(isset($_POST['Submit'])&&!empty($_POST['Submit'])){
   }
   else
   {
-  $sql = "INSERT INTO public.users (username, password, email)
-    VALUES ('".$usern."', '".sha1($password)."', '".$email."');";
+    $sqlcheck ="SELECT * FROM public.users WHERE username = '".$usern."' AND email = '".$email."';";
+  
+    $data = pg_query($db_connection,$sqlcheck); 
+    $login_check = pg_num_rows($data);
+    
+    if($login_check != 1){ 
+        
+      
+      $msg="<span style='color:res'>Invalid Email or Username!</span>";
+    }
+    else
+    {
+
+    
+
+  $sql = "UPDATE public.users SET password = '".sha1($password)."' WHERE username = '".$usern."' AND email = '".$email."';";
   
   
     pg_query($db_connection,$sql); 
@@ -44,7 +61,7 @@ if(isset($_POST['Submit'])&&!empty($_POST['Submit'])){
     header("location:index.php");
     exit;
        
-  
+    }
 }
 }
 }
@@ -59,7 +76,7 @@ if(isset($_POST['Submit'])&&!empty($_POST['Submit'])){
     </tr>
     <?php } ?>
     <tr>
-      <td colspan="2" align="left" valign="top"><h3>Create An Account</h3></td>
+      <td colspan="2" align="left" valign="top"><h3>Change Password</h3></td>
     </tr>
     <tr>
       <td align="right" valign="top">Username</td>
@@ -70,7 +87,7 @@ if(isset($_POST['Submit'])&&!empty($_POST['Submit'])){
       <td><input name="Email" type="text" class="Input"></td>
     </tr>
     <tr>
-      <td align="right">Password</td>
+      <td align="right">New Password</td>
       <td><input name="Password" type="password" class="Input"></td>
     </tr>
     <tr>

@@ -7,17 +7,17 @@ include('config.php');
 session_start(); /* Starts the session */
 
 if(isset($_POST['Submit'])&&!empty($_POST['Submit'])){
-  echo(" SUBMIT was set!");
+  
   $usern = $_POST['Username'];
   $hashpassword = $_POST['Password'];
   $sql ="SELECT * FROM public.users WHERE username = '".$usern."' AND password = '".sha1($hashpassword)."';";
-  echo(" Running command: $sql");
+  
   $data = pg_query($db_connection,$sql); 
   $login_check = pg_num_rows($data);
-  echo(" number of rows: $login_check");
+  
   if($login_check != 1){ 
       
-    echo "Invalid Details";
+    
     $msg="<span style='color:res'>Invalid Login Details</span>";
   }else{
       
@@ -89,6 +89,6 @@ $msg="<span style='color:red'>Invalid Login Details</span>";
     <input type="submit" value="Create Account" />
 </form>
 
-<a href="https://panorama-csce315.herokuapp.com/login.php">
+<a href="https://panorama-csce315.herokuapp.com/forgot.php">
 Forgot password?
 </a>
