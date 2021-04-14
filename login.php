@@ -6,11 +6,27 @@ include('config.php');
 
 session_start(); /* Starts the session */
 
- /*Check Login form submitted*/ if(isset($_POST['Submit'])) {
+if(isset($_POST['submit'])&&!empty($_POST['submit'])){
+    
+  $hashpassword = md5($_POST['Password']);
+  $sql ="select * from public.user where username = '".pg_escape_string($_POST['Username'])."' and password ='".$hashpassword."'";
+  $data = pg_query($db_connection,$sql); 
+  $login_check = pg_num_rows($data);
+  if($login_check > 0){ 
+      
+      echo "Login Successfully";  
+      $msg="<span style='color:red'>Invalid Login Details</span>";  
+  }else{
+      
+      echo "Invalid Details";
+      $msg="<span style='color:red'>Invalid Login Details</span>";
+  }
+}
+ /*Check Login form submitted*//* if(isset($_POST['Submit'])) {
 $username = isset($_POST['Username']) ? $_POST['Username'] : '';
 $password = isset($_POST['Password']) ? $_POST['Password'] : '';
 
-$query = $db_connection->prepare("select * from public.users where username= '".pg_escape_string($_POST['Username'])."'");
+$query = $db_connection->prepare("select * from public.users where username= '".pg_escape_string($_POST['Username'])."' and password ='". );
 $query->bindParam("username", $username, PDO::PARAM_STR);
 $query->execute();
 
@@ -34,7 +50,7 @@ exit;
 $msg="<span style='color:red'>Invalid Login Details</span>";
 }
 }
-}
+}*/
 ?>
 <form action="" method="post" name="Login_Form">
   <table width="400" border="0" align="center" cellpadding="5" cellspacing="1" class="Table">
