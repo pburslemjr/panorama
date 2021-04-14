@@ -20,14 +20,18 @@ if(isset($_POST['Submit'])&&!empty($_POST['Submit'])){
 
     if(!$uppercase || !$lowercase || !$number || !$specialChars || strlen($password) < 7) {
         
-        $msg ="<span style='color:red'>Password should be at least 7 characters in length and should include at least one upper case letter, one number, and one special character.</span>";
+        $msg ="<span style='color:red'>Password should be at least 7 characters in length and should include at least one upper case letter, lower case letter, one number, and one special character.</span>";
     }else{
         
     
 
-  if ($confirm != $hashpassword)
+  if ($confirm != $password)
   {
     $msg="<span style='color:red'>Passwords Must Match!</span>";
+    $usern = "";
+  $password = "";
+  $confirm = "";
+  $email = "";
   }
   else
   {
