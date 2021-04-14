@@ -21,7 +21,7 @@ if(isset($_POST['Submit'])&&!empty($_POST['Submit'])){
     $msg="<span style='color:res'>Invalid Login Details</span>";
   }else{
       
-    $_SESSION['users']['username']=$logins[$username];
+    $_SESSION['users']['username'] = $usern;
     header("location:index.php");
     exit;
        
