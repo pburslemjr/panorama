@@ -6,7 +6,7 @@ include('config.php');
 
 session_start(); /* Starts the session */
 
- /*Check Login form submitted*/ if(isset($_POST['Submit'])){
+ /*Check Login form submitted*/ if(isset($_POST['Submit'])) {
 $username = isset($_POST['Username']) ? $_POST['Username'] : '';
 $password = isset($_POST['Password']) ? $_POST['Password'] : '';
 
@@ -27,7 +27,7 @@ exit;
 $msg="<span style='color:red'>Invalid Login Details</span>";
 }
 }
-
+}
 ?>
 <form action="" method="post" name="Login_Form">
   <table width="400" border="0" align="center" cellpadding="5" cellspacing="1" class="Table">
