@@ -9,7 +9,7 @@ session_start(); /* Starts the session */
 if(isset($_POST['Submit'])&&!empty($_POST['Submit'])){
   echo(" SUBMIT was set!");
   $usern = $_POST['Username'];
-  $hashpassword = $_POST['Password'];
+  $hashpassword = md5($_POST['Password']);
   $sql ="SELECT * FROM public.users WHERE username = '".$usern."' AND password = '".md5($hashpassword)."';";
   echo(" Running command: $sql");
   $data = pg_query($db_connection,$sql); 
