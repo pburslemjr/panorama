@@ -27,10 +27,7 @@ if(isset($_POST['Submit'])&&!empty($_POST['Submit'])){
        
   }
 }
-else
-{
-  echo(" SUBMIT was not set!");
-}
+
 
 
  /*Check Login form submitted*//* if(isset($_POST['Submit'])) {
@@ -87,3 +84,7 @@ $msg="<span style='color:red'>Invalid Login Details</span>";
     </tr>
   </table>
 </form>
+<a href="https://panorama-csce315.herokuapp.com/login.php">
+Forgot password?
+</a>
+<button href="https://panorama-csce315.herokuapp.com/create.php"></button>
