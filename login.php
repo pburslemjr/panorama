@@ -7,7 +7,7 @@ include('config.php');
 session_start(); /* Starts the session */
 
 if(isset($_POST['Submit'])&&!empty($_POST['Submit'])){
-    
+  echo(" SUBMIT was set!");
   $usern = $_POST['Username'];
   $hashpassword = $_POST['Password'];
   $sql ="SELECT * FROM public.users WHERE username = '$usern' AND password = md5('$hashpassword');";
@@ -25,7 +25,7 @@ if(isset($_POST['Submit'])&&!empty($_POST['Submit'])){
 }
 else
 {
-  echo("SUBMIT was not set!");
+  echo(" SUBMIT was not set!");
 }
 
 
