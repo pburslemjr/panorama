@@ -11,6 +11,8 @@ if(isset($_POST['Submit'])&&!empty($_POST['Submit'])){
   $usern = $_POST['Username'];
   $hashpassword = $_POST['Password'];
   $confirm = $_POST['Confirm'];
+  $email = $_POST['Email'];
+
   if ($confirm != $hashpassword)
   {
     $msg="<span style='color:res'>Passwords Must Match!</span>";
@@ -18,7 +20,7 @@ if(isset($_POST['Submit'])&&!empty($_POST['Submit'])){
   else
   {
   $sql = "INSERT INTO public.users (username, password, email)
-    VALUES ('".$usern."', '".sha1($hashpassword)."', '".$usern."');";
+    VALUES ('".$usern."', '".sha1($hashpassword)."', '".$email."');";
   
   
     pg_query($db_connection,$sql); 

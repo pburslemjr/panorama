@@ -84,7 +84,11 @@ $msg="<span style='color:red'>Invalid Login Details</span>";
     </tr>
   </table>
 </form>
+
+<form action="https://panorama-csce315.herokuapp.com/create.php">
+    <input type="submit" value="Create Account" />
+</form>
+
 <a href="https://panorama-csce315.herokuapp.com/login.php">
 Forgot password?
 </a>
-<button href="https://panorama-csce315.herokuapp.com/create.php"></button>
