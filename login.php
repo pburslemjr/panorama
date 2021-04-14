@@ -17,12 +17,14 @@ if(isset($_POST['Submit'])&&!empty($_POST['Submit'])){
   echo(" number of rows: $login_check");
   if($login_check != 1){ 
       
-      echo "Login Successfully";  
-      $msg="<span style='color:red'>Invalid Login Details</span>";  
+    echo "Invalid Details";
+    $msg="<span style='color:res'>Invalid Login Details</span>";
   }else{
       
-      echo "Invalid Details";
-      $msg="<span style='color:red'>Invalid Login Details</span>";
+    $_SESSION['users']['username']=$logins[$username];
+    header("location:index.php");
+    exit;
+       
   }
 }
 else

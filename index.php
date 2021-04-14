@@ -4,6 +4,9 @@ echo("Oops no user data");
 header("location:login.php");
 exit;
 }
+else{
+    $name = $_SESSION['users']['username'];
+echo("Welcome, {$name}!");
+}
 ?>
 
-testing! login successful
