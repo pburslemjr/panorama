@@ -18,7 +18,7 @@ if(isset($_POST['Submit'])&&!empty($_POST['Submit'])){
   if($login_check != 1){ 
       
     
-    $msg="<span style='color:res'>Invalid Login Details</span>";
+    $msg="<span style='color:red'>Invalid Login Details</span>";
   }else{
       
     $_SESSION['users']['username'] = $usern;

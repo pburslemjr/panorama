@@ -46,7 +46,7 @@ if(isset($_POST['Submit'])&&!empty($_POST['Submit'])){
     if($login_check != 1){ 
         
       
-      $msg="<span style='color:res'>Invalid Email or Username!</span>";
+      $msg="<span style='color:red'>Invalid Email or Username!</span>";
     }
     else
     {
