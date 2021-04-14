@@ -4,7 +4,7 @@
 
     echo 'Connection test : ';
     
-    $connection = pg_connect("host=csce-315-db.engr.tamu.edu port=5432 dbname=db906_group4_project3 user=paul_b_tamu password=227007259 connect_timeout=5");
+    $connection = pg_connect("host=ec2-34-225-167-77.compute-1.amazonaws.com port=5432 dbname=dc5as68u5c46ha user=lsezjsbyacoqyu password=e055db75ec95efeb00466767cf176070767ab7d0683d5c4817cffc71f20dd85b connect_timeout=5");
     if($connection) {
        echo 'connected';
     } else {

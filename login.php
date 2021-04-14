@@ -6,7 +6,7 @@ include('config.php');
 
 session_start(); /* Starts the session */
 
-/* Check Login form submitted*//* if(isset($_POST['Submit'])){
+ /*Check Login form submitted*/ if(isset($_POST['Submit'])){
 $Username = isset($_POST['Username']) ? $_POST['Username'] : '';
 $Password = isset($_POST['Password']) ? $_POST['Password'] : '';
 
