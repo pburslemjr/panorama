@@ -10,7 +10,7 @@ session_start(); /* Starts the session */
 $username = isset($_POST['Username']) ? $_POST['Username'] : '';
 $password = isset($_POST['Password']) ? $_POST['Password'] : '';
 
-$query = $db_connection->prepare("SELECT * FROM users WHERE username=:Username");
+$query = $db_connection->prepare("select * from public.users where username= '".pg_escape_string($_POST['Username'])."'");
 $query->bindParam("username", $username, PDO::PARAM_STR);
 $query->execute();
 
