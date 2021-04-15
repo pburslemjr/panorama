@@ -6,7 +6,7 @@ include('config.php');
 
 session_start(); /* Starts the session */
 
-if(isset($_POST['Submit'])&&!empty($_POST['Submit'])){
+if(isset($_POST['Submit'])&&!empty($_POST['Submit'])) {
   
   $usern = $_POST['Username'];
 
@@ -55,6 +55,7 @@ if(isset($_POST['Submit'])&&!empty($_POST['Submit'])){
 }
 } else {
     $msg="<span style='color:red'>Username Taken!</span>";
+}
 }
 }
 ?>
