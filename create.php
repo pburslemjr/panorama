@@ -9,9 +9,14 @@ session_start(); /* Starts the session */
 if(isset($_POST['Submit'])&&!empty($_POST['Submit'])){
   
   $usern = $_POST['Username'];
+
   $password = $_POST['Password'];
   $confirm = $_POST['Confirm'];
   $email = $_POST['Email'];
+  $checkuser = "SELECT * FROM public.users WHERE username = '".$usern."';"; 
+  $sameuserdata = pg_query($db_connection, $checkuser); 
+  
+  $usercount = pg_num_rows($data);
   // Check password strength
     $uppercase = preg_match('@[A-Z]@', $password);
     $lowercase = preg_match('@[a-z]@', $password);
@@ -21,7 +26,7 @@ if(isset($_POST['Submit'])&&!empty($_POST['Submit'])){
     if(!$uppercase || !$lowercase || !$number || !$specialChars || strlen($password) < 7) {
         
         $msg ="<span style='color:red'>Password should be at least 7 characters in length and should include at least one upper case letter, lower case letter, one number, and one special character.</span>";
-    }else{
+    }else if ($usercount == 0){
         
     
 
@@ -46,6 +51,9 @@ if(isset($_POST['Submit'])&&!empty($_POST['Submit'])){
        
   
 }
+}
+else {
+    $msg="<span style='color:red'>Username Taken!</span>";
 }
 }
 ?>
