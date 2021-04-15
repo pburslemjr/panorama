@@ -13,10 +13,10 @@ if(isset($_POST['Submit'])&&!empty($_POST['Submit'])) {
   $password = $_POST['Password'];
   $confirm = $_POST['Confirm'];
   $email = $_POST['Email'];
-  $checkuser = "SELECT * FROM public.users WHERE username = '".$usern."';"; 
+  $checkuser = "SELECT * FROM public.users WHERE username = '$usern';"; 
   $sameuserdata = pg_query($db_connection, $checkuser); 
   
-  $usercount = pg_num_rows($data);
+  $usercount = pg_num_rows($sameuserdata);
   // Check password strength
     $uppercase = preg_match('@[A-Z]@', $password);
     $lowercase = preg_match('@[a-z]@', $password);
