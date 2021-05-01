@@ -66,7 +66,7 @@
             $currDate = strtotime("-1 day", $currDate);
             
             ?>
-            data.addRows([[<?php echo($currDate); ?>, 7]]);
+            data.addRow([<?php echo(json_encode($currDate)); ?>, 7]);
         }
         
         
