@@ -14,7 +14,7 @@
                     <a href="index.php">Dashboard</a>
                 </div>
                 <div class="sidebar-item">
-                    Connections
+                <a href="connect.php">Connect Account</a>
                 </div>
                 <div class="sidebar-item">
                     <a href="analytics.php">Analytics</a>

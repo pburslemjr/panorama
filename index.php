@@ -7,15 +7,12 @@ exit;
 else{
    
     $name = $_SESSION['users']['username'];
-    
-    
-
 }
 ?>
 
 <html>
     <head>
-        <title>Panorama Template</title>
+        <title>Panorama</title>
         <link rel="stylesheet" href="styles.css">
         <script src="getUserPosts.js" type="text/javascript"></script>
     </head>
@@ -29,7 +26,7 @@ else{
                     <a href="index.php">Dashboard</a>
                 </div>
                 <div class="sidebar-item">
-                    Connections
+                <a href="connect.php">Connect Account</a>
                 </div>
                 <div class="sidebar-item">
                     <a href="analytics.php">Analytics</a>

@@ -13,13 +13,13 @@
                 <div class="sidebar-item">
                     <a href="index.php">Dashboard</a>
                 </div>
-                <div class="sidebar-item">
+                <div class="sidebar-current">
                 <a href="connect.php">Connect Account</a>
                 </div>
                 <div class="sidebar-item">
                     <a href="analytics.php">Analytics</a>
                 </div>
-                <div class="sidebar-current">
+                <div class="sidebar-item">
                     <a href="account.php">Account</a>
                 </div>
                 <div class="sidebar-item">
@@ -33,7 +33,16 @@
             </div> 
             <div class="main-content">
                 <br>
-                <div class="title">Account</div>
+                <div class="title">Connect Account</div>
+                <div class="card">
+                    <img src="twitter_icon.jpg" alt="Twitter" style="width:100%">
+                    <h1>Twitter</h1>
+                    <p class="title">Connect your Twitter Account</p>
+                    
+                    <a href="#">Connect Now</a>
+                    
+                    <p><button>Contact</button></p>
+                </div>
             </div>
         </div>
     </body>
