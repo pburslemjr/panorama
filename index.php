@@ -5,9 +5,10 @@ header("location:login.php");
 exit;
 }
 else{
-    header("location:index.html");
+   
     $name = $_SESSION['users']['username'];
-echo("Welcome, {$name}!");
+    echo("Welcome, {$name}!");
+    include 'index.html';
 
 }
 ?>
