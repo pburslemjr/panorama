@@ -21,6 +21,7 @@ html, body{
     float: left;
     background-color: #eeeeee;
     display: table-column-group;
+    margin-left: 5px;
 }
 
 .sidebar-logo{
@@ -39,7 +40,7 @@ html, body{
     height: 33px;
     float: right;
     background-color: #eeeeee;
-    margin-left: 5px;
+    
 
     text-align: left;
     font-family: Helvetica, Arial, sans-serif;
