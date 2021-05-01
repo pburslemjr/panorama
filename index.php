@@ -26,19 +26,19 @@ else{
                     <img src="LogoBanner.png" width=100%>
                 </div>
                 <div class="sidebar-current">
-                    <a href="index.html">Dashboard</a>
+                    <a href="index.php">Dashboard</a>
                 </div>
                 <div class="sidebar-item">
                     Connections
                 </div>
                 <div class="sidebar-item">
-                    <a href="analytics.html">Analytics</a>
+                    <a href="analytics.php">Analytics</a>
                 </div>
                 <div class="sidebar-item">
-                    <a href="account.html">Account</a>
+                    <a href="account.php">Account</a>
                 </div>
                 <div class="sidebar-item">
-                    <a href="settings.html">Settings</a>
+                    <a href="settings.php">Settings</a>
                 </div>
                 <div class="sidebar-info">
                     Panorama v1.0.0 <br>
