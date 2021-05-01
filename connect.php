@@ -1,11 +1,12 @@
 
 <?php 
+    session_start();
     include('config.php');
     $twitter_status = "Not connected";
-    
+    $name = $_SESSION['users']['username'];
     echo($name);
     $getusersql ="SELECT * FROM public.accounts WHERE username = '".$name."';";
-    $data = pg_query($db_connection,$sqlcheck); 
+    $data = pg_query($db_connection,$getusersql); 
     $login_check = pg_num_rows($data);
     
     if($login_check != 1){ 
