@@ -3,6 +3,8 @@
     session_start();
     include('config.php');
     $twitter_status = "Not connected";
+    $facebook_status = "Not connected";
+    $reddit_status = "Not connected";
     $name = $_SESSION['users']['username'];
     
     $getusersql ="SELECT * FROM public.accounts WHERE username = '".$name."';";
@@ -20,10 +22,20 @@
     else
     {
         $twitter_username = $userinfo["twitter"];
+        $facebook_username = $userinfo["facebook"];
+        $reddit_username = $userinfo["reddit"];
         
         if ($twitter_username != "n/a")
         {
             $twitter_status = "Connected to account: $twitter_username";
+        }
+        if ($facebook_username != "n/a")
+        {
+            $facebook_status = "Connected to account: $facebook_username";
+        }
+        if ($reddit_username != "n/a")
+        {
+            $reddit_status = "Connected to account: $reddit_username";
         }
     }
 ?>
@@ -67,10 +79,26 @@
                     <h1>Twitter</h1>
                     <p class="title">Status: <?php echo($twitter_status);?></p>
                     
-                    <a href="#">Connect Now</a>
-                    
+                    <a href="#">Connect Now</a>                   
                     
                 </div>
+                <div class="card">
+                    <img src="facebook_icon.png" alt="Facebook" style="width:100%">
+                    <h1>Facebook</h1>
+                    <p class="title">Status: <?php echo($facebook_status);?></p>
+                    
+                    <a href="#">Connect Now</a>                   
+                    
+                </div>
+                <div class="card">
+                    <img src="reddit_icon.jpg" alt="Reddit" style="width:100%">
+                    <h1>Reddit</h1>
+                    <p class="title">Status: <?php echo($reddit_status);?></p>
+                    
+                    <a href="#">Connect Now</a>                   
+                    
+                </div>
+                
             </div>
         </div>
     </body>
