@@ -19,9 +19,10 @@
     else
     {
         $twitter_username = $data["twitter"];
+        echo($twitter_username);
         if ($twitter_username != "n/a")
         {
-            $twitter_status = "Connected to account: " + $twitter_username;
+            $twitter_status = "Connected to account: $twitter_username";
         }
     }
 ?>
