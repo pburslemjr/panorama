@@ -53,23 +53,25 @@
 
         // Create the data table.
         var data = new google.visualization.DataTable();
-        data.addColumn('string', 'Topping');
-        data.addColumn('number', 'Slices');
-        data.addRows([
-          ['Mushrooms', 3],
-          ['Onions', 1],
-          ['Olives', 1],
-          ['Zucchini', 1],
-          ['Pepperoni', 2]
-        ]);
+        data.addColumn('number', 'Date');
+        data.addColumn('number', 'Interactions');
+        var i;
+        for (i = 0; i < 30; i++)
+        {
+            data.addRows([new Date(<?php echo(date("Y, m -"));?> i <?php echo(date(", d"));?>]), 7]);
+        }
+        
+        
+        
+        
 
         // Set chart options
-        var options = {'title':'How Much Pizza I Ate Last Night',
-                       'width':400,
+        var options = {'title':'Likes',
+                       'width':500,
                        'height':300};
 
         // Instantiate and draw our chart, passing in some options.
-        var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+        var chart = new google.visualization.Histogram(document.getElementById('chart_div'));
         chart.draw(data, options);
       }
     </script>
