@@ -58,15 +58,16 @@
         var i;
         <?php 
          $currDate = date("Y-m-d");
+         $offset = 1;
         ?>
         for (i = 0; i < 30; i++)
         {
             <?php 
             
-            $currDate = strtotime("-1 day", $currDate);
-            
+            $currDate = strtotime("-$offset day");
+            $offset++;
             ?>
-            data.addRow([<?php echo(json_encode($currDate)); ?>, 7]);
+            data.addRow([<?php echo($currDate); ?>, 7]);
         }
         
         
