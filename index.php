@@ -43,7 +43,7 @@ else{
                 <div class="sidebar-info">
                     Panorama v1.0.0 <br>
                     <a href="about:blank">About</a><br>
-                    <a href="about:blank">Help</a>
+                    <a href="https://panorama-csce315.herokuapp.com/logout.php">Log Out</a>
                 </div>
             </div> 
             <div class="main-content">
