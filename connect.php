@@ -2,7 +2,7 @@
 <?php 
     include('config.php');
     $twitter_status = "Not connected";
-    session_start();
+    
     echo($name);
     $getusersql ="SELECT * FROM public.accounts WHERE username = '".$name."';";
     $data = pg_query($db_connection,$sqlcheck); 
