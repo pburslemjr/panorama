@@ -84,7 +84,7 @@
                        'width':500,
                        'height':300,
                        hAxis : {
-                           gridlines : {color: '#333', minSpacing: 20}
+                           gridlines : {color: '#333', minSpacing: 2}
                        }
                        };
 
