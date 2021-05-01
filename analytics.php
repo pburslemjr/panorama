@@ -83,7 +83,9 @@
         var options = {'title':'Likes',
                        'width':500,
                        'height':300,
-                       'hAxis.gridlines':'{color: '#333', minSpacing: 20}'
+                       hAxis : {
+                           gridlines : {color: '#333', minSpacing: 20}
+                       }
                        };
 
         // Instantiate and draw our chart, passing in some options.
