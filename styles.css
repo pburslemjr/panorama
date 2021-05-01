@@ -15,13 +15,13 @@ html, body{
     position: fixed;
     border-collapse: collapse;
     border: 0px;
-    padding: 0px;
+    padding: 2px;
     width: 200px;
     height: 100%;
     float: left;
     background-color: #eeeeee;
     display: table-column-group;
-    margin-left: 5px;
+    
 }
 
 .sidebar-logo{
