@@ -4,10 +4,12 @@
     include('config.php');
     $twitter_status = "Not connected";
     $name = $_SESSION['users']['username'];
-    echo($name);
+    echo("{$name} \n");
     $getusersql ="SELECT * FROM public.accounts WHERE username = '".$name."';";
+    echo($getusersql);
     $data = pg_query($db_connection,$getusersql); 
     $login_check = pg_num_rows($data);
+    echo($login_check);
     
     if($login_check != 1){ 
         
