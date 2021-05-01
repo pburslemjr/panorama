@@ -57,7 +57,18 @@
         data.addColumn('number', 'Interactions');
         
         <?php 
-           $data = array(7,6,4,3,2,7,8,9,3,1) 
+           $data = array(
+               array(0,7),
+               array(1,6),
+               array(2,4),
+               array(3,3),
+               array(4,2),
+               array(5,7),
+               array(6,8),
+               array(7,9),
+               array(8,3),
+               array(9,1));
+               
             
             
         ?>
