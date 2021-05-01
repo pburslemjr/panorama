@@ -1,7 +1,30 @@
 
+<?php 
+    include('config.php');
+    $twitter_status = "Not connected";
+    session_start();
+    
+    $getusersql ="SELECT * FROM public.accounts WHERE username = '".$name."';";
+    $data = pg_query($db_connection,$sqlcheck); 
+    $login_check = pg_num_rows($data);
+    
+    if($login_check != 1){ 
+        
+      
+      
+    }
+    else
+    {
+        $twitter_username = $data["twitter"];
+        if ($twitter_username != "n/a")
+        {
+            $twitter_status = "Connected to account: " + $twitter_username;
+        }
+    }
+?>
 <html>
     <head>
-        <title>Panorama Template</title>
+        <title>Panorama</title>
         <link rel="stylesheet" href="styles.css">
     </head>
     <body>
@@ -37,11 +60,11 @@
                 <div class="card">
                     <img src="twitter_icon.jpg" alt="Twitter" style="width:100%">
                     <h1>Twitter</h1>
-                    <p class="title">Connect your Twitter Account</p>
+                    <p class="title">Status: <?php echo($twitter_status);?></p>
                     
                     <a href="#">Connect Now</a>
                     
-                    <p><button>Contact</button></p>
+                    
                 </div>
             </div>
         </div>
