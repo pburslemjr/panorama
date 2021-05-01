@@ -1,62 +1,18 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Panorama Template</title>
-        <link rel="stylesheet" href="styles.css">
-        <script src="getUserPosts.js" type="text/javascript"></script>
-    </head>
-    <body>
-        <div class="main-body">
-            <div class="sidebar">
-                <div class="sidebar-logo">
-                    <img src="LogoBanner.png" width=100%>
-                </div>
-                <div class="sidebar-current">
-                    <a href="index.html">Dashboard</a>
-                </div>
-                <div class="sidebar-item">
-                    Connections
-                </div>
-                <div class="sidebar-item">
-                    <a href="analytics.html">Analytics</a>
-                </div>
-                <div class="sidebar-item">
-                    <a href="account.html">Account</a>
-                </div>
-                <div class="sidebar-item">
-                    <a href="settings.html">Settings</a>
-                </div>
-                <div class="sidebar-info">
-                    Panorama v1.0.0 <br>
-                    <a href="about:blank">About</a><br>
-                    <a href="about:blank">Help</a>
-                </div>
-            </div> 
-            <div class="main-content">
-                <div class="title" id="dashboardTitle"></div>
-                <hr>
-                <table class="dashboard-button-table">
-                    <tr>
-                        <th>
-                            <img src="PlaceholderIcon.png" class="dashboard-button">
-                        </th>
-                        <th>
-                            <img src="PlaceholderIcon.png" class="dashboard-button">
-                        </th>
-                    </tr>
-                    <tr class="dashboard-button-label">
-                        <td>
-                            Link 1
-                        </td>
-                        <td>
-                            Link 2
-                        </td>
-                        <td>
-                            <p id="testAPI"></p>
-                        </td>
-                    </tr>
-                </table>
-            </div>
-        </div>
-    </body>
-</html>
+<?php session_start(); /* Starts the session */
+if(!isset($_SESSION['users']['username'])){
+
+header("location:login.php");
+exit;
+}
+else{
+    header("location:index.html");
+    $name = $_SESSION['users']['username'];
+echo("Welcome, {$name}!");
+
+}
+?>
+
+<form action="https://panorama-csce315.herokuapp.com/logout.php">
+    <input type="submit" value="Log Out" />
+</form>
+
