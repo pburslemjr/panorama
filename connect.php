@@ -8,6 +8,7 @@
     $getusersql ="SELECT * FROM public.accounts WHERE username = '".$name."';";
     echo($getusersql);
     $data = pg_query($db_connection,$getusersql); 
+    $userinfo = $data->FETCH_ASSOC();
     $login_check = pg_num_rows($data);
     echo($login_check);
     
@@ -18,7 +19,7 @@
     }
     else
     {
-        $twitter_username = $data["twitter"];
+        $twitter_username = $userinfo["twitter"];
         echo($twitter_username);
         if ($twitter_username != "n/a")
         {
