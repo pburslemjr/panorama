@@ -64,7 +64,7 @@
         {
             <?php 
             
-            $currDate = strtotime("-$offset day");
+            $currDate = date(strtotime("-$offset day"));
             $offset++;
             ?>
             data.addRow([<?php echo($currDate); ?>, 7]);
