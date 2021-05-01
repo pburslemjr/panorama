@@ -4,13 +4,13 @@
     include('config.php');
     $twitter_status = "Not connected";
     $name = $_SESSION['users']['username'];
-    echo("{$name} \n");
+    
     $getusersql ="SELECT * FROM public.accounts WHERE username = '".$name."';";
-    echo($getusersql);
+    
     $data = pg_query($db_connection,$getusersql); 
     $userinfo = pg_fetch_assoc($data);
     $login_check = pg_num_rows($data);
-    echo($login_check);
+    
     
     if($login_check != 1){ 
         
@@ -20,7 +20,7 @@
     else
     {
         $twitter_username = $userinfo["twitter"];
-        echo($twitter_username);
+        
         if ($twitter_username != "n/a")
         {
             $twitter_status = "Connected to account: $twitter_username";

@@ -45,9 +45,10 @@ if(isset($_POST['Submit'])&&!empty($_POST['Submit'])) {
   $sql = "INSERT INTO public.users (username, password, email)
     VALUES ('".$usern."', '".sha1($password)."', '".$email."');";
   
-  
+  $sql2 = "INSERT INTO public.accounts (username, twitter, facebook, instagram, reddit)
+    VALUES ('".$usern."', 'n/a', 'n/a', 'n/a', 'n/a');";
     pg_query($db_connection,$sql); 
-  
+    pg_query($db_connection,$sql2);
     header("location:index.php");
     exit;
        
