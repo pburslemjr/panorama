@@ -8,7 +8,7 @@
     $getusersql ="SELECT * FROM public.accounts WHERE username = '".$name."';";
     echo($getusersql);
     $data = pg_query($db_connection,$getusersql); 
-    $userinfo = $data->FETCH_ASSOC();
+    $userinfo = $data->pg_fetch_assoc();
     $login_check = pg_num_rows($data);
     echo($login_check);
     
