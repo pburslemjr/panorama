@@ -88,8 +88,7 @@
 
         // Instantiate and draw our chart, passing in some options.
         var chart = new google.visualization.Histogram(document.getElementById('chart_div'));
-        hAxis.gridlines
-        {color: '#333', minSpacing: 20}
+        
         chart.draw(data, options);
       }
     </script>
