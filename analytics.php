@@ -53,12 +53,20 @@
 
         // Create the data table.
         var data = new google.visualization.DataTable();
-        data.addColumn('number', 'Date');
+        data.addColumn('string', 'Date');
         data.addColumn('number', 'Interactions');
         var i;
+        <?php 
+         $currDate = date("Y-m-d");
+        ?>
         for (i = 0; i < 30; i++)
         {
-            data.addRows([new Date(<?php echo(date("Y, m -"));?> i <?php echo(date(", d"));?>]), 7]);
+            <?php 
+            
+            $currDate = strtotime("-1 day", $currDate);
+            
+            ?>
+            data.addRows([[<?php echo($currDate); ?>, 7]]);
         }
         
         
