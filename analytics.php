@@ -53,22 +53,15 @@
 
         // Create the data table.
         var data = new google.visualization.DataTable();
-        data.addColumn('string', 'Date');
+        data.addColumn('number', 'Date');
         data.addColumn('number', 'Interactions');
-        var i;
+        
         <?php 
-         $currDate = date("Y-m-d");
-         $offset = 1;
-        ?>
-        for (i = 0; i < 30; i++)
-        {
-            <?php 
+           $data = array(7,6,4,3,2,7,8,9,3,1) 
             
-            $currDate = date(strtotime("-$offset day"));
-            $offset++;
-            ?>
-            data.addRow([<?php echo($currDate); ?>, 7]);
-        }
+            
+        ?>
+        data.addRows(<?php echo(json_encode($data)); ?>);
         
         
         
