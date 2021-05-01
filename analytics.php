@@ -53,21 +53,22 @@
 
         // Create the data table.
         var data = new google.visualization.DataTable();
-        data.addColumn('number', 'Date');
+        
         data.addColumn('number', 'Interactions');
+        data.addColumn('number', 'Date');
         
         <?php 
            $data = array(
-               array(0,7),
-               array(1,6),
-               array(2,4),
-               array(3,3),
-               array(4,2),
-               array(5,7),
-               array(6,8),
-               array(7,9),
-               array(8,3),
-               array(9,1));
+               array(0,rand(1,30)),
+               array(1,rand(1,30)),
+               array(2,rand(1,30)),
+               array(3,rand(1,30)),
+               array(4,rand(1,30)),
+               array(5,rand(1,30)),
+               array(6,rand(1,30)),
+               array(7,rand(1,30)),
+               array(8,rand(1,30)),
+               array(9,rand(1,30)));
                
             
             
