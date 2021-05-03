@@ -75,7 +75,7 @@
                 <br>
                 <div class="title">Connect Account</div>
                 <div class="card">
-                    <img src="twitter_icon.jpg" alt="Twitter" style="width:100%">
+                    <img src="tSquare.png" alt="Twitter" style="width:100%">
                     <h1>Twitter</h1>
                     <p class="title">Status: <?php echo($twitter_status);?></p>
                     
@@ -83,7 +83,7 @@
                     
                 </div>
                 <div class="card">
-                    <img src="facebook_icon.png" alt="Facebook" style="width:100%">
+                    <img src="fSquare.png" alt="Facebook" style="width:100%">
                     <h1>Facebook</h1>
                     <p class="title">Status: <?php echo($facebook_status);?></p>
                     
