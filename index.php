@@ -53,10 +53,27 @@ else{
                 <table class="dashboard-button-table">
                     <tr>
                         <th>
-                            <img src="PlaceholderIcon.png" class="dashboard-button">
+                            <div class="card">
+                                <h4><b>Tweet Statistics</b></h4>
+                                <img src="sampleTweet.jpg" alt="Avatar" style="width:100%">
+                                <div class="container">
+                                    <p>Likes:</p>
+                                    <h1>21</h1>
+                                    <br>
+                                    <p>Retweets:</p>
+                                    <h1>4</h1>
+                                </div>
+                            </div>
                         </th>
                         <th>
-                            <img src="PlaceholderIcon.png" class="dashboard-button">
+                            <div class="card">
+                                <h4><b>Reddit Post Interactions</b></h4>
+                                <img src="sampleReddit.jpg" alt="Avatar" style="width:100%">
+                                <div class="container">
+                                    <p>Interactions on most recent reddit post:</p>
+                                    <h1>741</h1>
+                                </div>
+                            </div>
                         </th>
                     </tr>
                     <tr class="dashboard-button-label">
