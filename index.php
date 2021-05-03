@@ -48,6 +48,7 @@ else{
     else
     {
         $twitter = $_SESSION['users']['twitter'];
+        echo($twitter);
         $twitterlikes = shell_exec('twitterlikes.py ' . escapeshellarg($twitter));
     }
     
