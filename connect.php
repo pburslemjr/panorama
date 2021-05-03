@@ -7,9 +7,11 @@
         
         $twitteruser = $_POST['tuname'];
         $sql = "UPDATE public.accounts SET twitter = '".$twitteruser."' WHERE username = '".$name."';";
+
     
     echo($sql);
     pg_query($db_connection,$sql); 
+    $_SESSON['users']['twitter'] = $twitteruser;
     }
     $twitter_status = "Not connected";
     $facebook_status = "Not connected";
