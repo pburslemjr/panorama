@@ -49,8 +49,9 @@ else{
     else
     {
         $twitter = $_SESSION['users']['twitter'];
-        
+        echo($twitter);
         $twitterlikes = shell_exec('python twitterlikes.py ' . escapeshellarg($twitter));
+        echo($twitterlikes);
         $twitterretweets = shell_exec('python twitterretweets.py ' . escapeshellarg($twitter));
         
 
