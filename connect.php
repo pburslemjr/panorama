@@ -8,6 +8,12 @@
         $twitteruser = $_POST['tuname'];
         $sql = "UPDATE public.accounts SET twitter = '".$twitteruser."' WHERE username = '".$name."';";
 
+    if(isset($_POST['rsubmit'])&&!empty($_POST['rsubmit'])){
+    
+        $reddituser = $_POST['runame'];
+        $sql = "UPDATE public.accounts SET reddit = '".$reddituser."' WHERE username = '".$name."';";
+
+    
     
     echo($sql);
     pg_query($db_connection,$sql); 
@@ -104,14 +110,17 @@
                     <a href="#">Connect Now</a>                   
                     
                 </div>
-                <div class="card">
-                    <img src="reddit_icon.jpg" alt="Reddit" style="width:100%">
-                    <h1>Reddit</h1>
-                    <p class="title">Status: <?php echo($reddit_status);?></p>
-                    
-                    <a href="#">Connect Now</a>                   
-                    
-                </div>
+                <form action="https://panorama-csce315.herokuapp.com/connect.php" method="post">
+                    <div class="card">
+                        <img src="reddit_icon.jpg" alt="Reddit" style="width:100%">
+                        <h1>Reddit</h1>
+                        <p class="title">Status: <?php echo($reddit_status);?></p>
+                        <label for="rname"><b>Username</b></label>
+                        <input type="text" placeholder="Enter Reddit Username" name="runame" required>
+                        <input type="submit" name="rsubmit" class="Input">                 
+                        
+                    </div>
+                </form>
                 
             </div>
         </div>

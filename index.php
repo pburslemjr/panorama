@@ -36,7 +36,7 @@ else{
         }
         if ($reddit_username != "n/a")
         {
-            $reddit_status = "Connected to account: $reddit_username";
+            $_SESSION['users']['reddit'] = $reddit_username;
         }
     }
 
@@ -53,12 +53,21 @@ else{
         $twitterlikes = shell_exec('python twitterlikes.py ' . escapeshellarg($twitter));
         echo($twitterlikes);
         $twitterretweets = shell_exec('python twitterretweets.py ' . escapeshellarg($twitter));
-        
-
-        
     }
     
-    
+    if(!isset($_SESSION['users']['reddit']))
+    {
+        $redditkarma = "Account not connected!";
+
+    }
+    else
+    {
+        $reddit = $_SESSION['users']['reddit'];
+        echo($reddit);
+        $redditkarma = shell_exec('python reddit_total_karma.py ' . escapeshellarg($reddit));
+        echo($redditkarma);
+        $redditratio = shell_exec('python reddit_upvote_ratio.py ' . escapeshellarg($reddit));
+    }
 
 }
 ?>
@@ -120,11 +129,14 @@ else{
                         </th>
                         <th>
                             <div class="card">
-                                <h4><b>Reddit Post Interactions</b></h4>
+                                <h4><b>Reddit Statistics</b></h4>
                                 <img src="sampleReddit.jpg" alt="Avatar" style="width:100%">
                                 <div class="container">
-                                    <p>Interactions on most recent reddit post:</p>
-                                    <h1>741</h1>
+                                    <p>Total Account Karma:</p>
+                                    <h1><?php echo($redditkarma); ?></h1>
+                                    <br>
+                                    <p>Account Upvote Ratio:</p>
+                                    <h1><?php echo($redditratio); ?></h1>
                                 </div>
                             </div>
                         </th>
