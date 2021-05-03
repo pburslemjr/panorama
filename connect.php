@@ -2,18 +2,19 @@
 <?php 
     session_start();
     include('config.php');
+    $name = $_SESSION['users']['username'];
     if(isset($_POST['tsubmit'])&&!empty($_POST['tsubmit'])){
         
         $twitteruser = $_POST['tuname'];
         $sql = "INSERT INTO public.accounts (username, twitter)
-    VALUES ('".$usern."', '".$twitteruser."');";
+    VALUES ('".$name."', '".$twitteruser."');";
     echo($sql);
     pg_query($db_connection,$sql); 
     }
     $twitter_status = "Not connected";
     $facebook_status = "Not connected";
     $reddit_status = "Not connected";
-    $name = $_SESSION['users']['username'];
+    
     
     $getusersql ="SELECT * FROM public.accounts WHERE username = '".$name."';";
     
