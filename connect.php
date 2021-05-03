@@ -6,8 +6,8 @@
     if(isset($_POST['tsubmit'])&&!empty($_POST['tsubmit'])){
         
         $twitteruser = $_POST['tuname'];
-        $sql = "INSERT INTO public.accounts (username, twitter)
-    VALUES ('".$name."', '".$twitteruser."');";
+        $sql = "UPDATE public.accounts SET twitter = '".$twitteruser."' WHERE username = '".$name."';";
+    
     echo($sql);
     pg_query($db_connection,$sql); 
     }
