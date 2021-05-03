@@ -1,3 +1,4 @@
+import sys
 import requests
 import pandas as pd
 import json
@@ -82,7 +83,8 @@ def week_logic(week_score):
         print("You had a negative week, I hope it gets better")
 
 def main():
-    url = create_twitter_url()
+    handle = sys.argv[1]
+    url = create_twitter_url(handle)
     data = process_yaml()
     bearer_token = create_bearer_token(data)
     res_json = twitter_auth_and_connect(bearer_token, url)
@@ -93,6 +95,8 @@ def main():
     json_lines = combine_lang_data(documents, with_languages)
     document_format = add_document_format(json_lines)
     sentiments = sentiment_scores(headers, sentiment_url, document_format)
+    score = mean_score(sentiments)
+    print(score)
 
 
 if __name__ == "__main__":

@@ -1,4 +1,11 @@
-
+<?php 
+    session_start();
+    include('config.php');
+    
+    $name = $_SESSION['users']['username'];
+    $twitter_handle = $_SESSION['users']['twitter'];
+    $sentiment = shell_exec('python sentiment.py' . escapeshellarg($twitter_handle));
+?>
 <html>
     <head>
         <title>Panorama Template</title>
@@ -33,7 +40,7 @@
             </div> 
             <div class="main-content">
                 <br>
-                <div class="title">Analytics</div>
+                <div class="title">Twitter Sentiment: <?php echo($sentiment) ?></div>
 
                 
     <!--Load the AJAX API-->

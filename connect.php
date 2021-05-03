@@ -24,7 +24,10 @@
         $twitter_username = $userinfo["twitter"];
         $facebook_username = $userinfo["facebook"];
         $reddit_username = $userinfo["reddit"];
-        
+        if (!isset($_SESSION['users']['twitter']))
+        {
+            $_SESSION['users']['twitter'] = $twitter_username;
+        }
         if ($twitter_username != "n/a")
         {
             $twitter_status = "Connected to account: $twitter_username";
