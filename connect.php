@@ -24,10 +24,7 @@
         $twitter_username = $userinfo["twitter"];
         $facebook_username = $userinfo["facebook"];
         $reddit_username = $userinfo["reddit"];
-        if (!isset($_SESSION['users']['twitter']))
-        {
-            $_SESSION['users']['twitter'] = $twitter_username;
-        }
+        
         if ($twitter_username != "n/a")
         {
             $twitter_status = "Connected to account: $twitter_username";
@@ -53,33 +50,28 @@
                 <div class="sidebar-logo">
                     <img src="LogoBanner.png" width=100%>
                 </div>
-                <a href="index.php">
-                    <div class="sidebar-item">  
-                        Dashboard
-                    </div>
-                </a>
-                <a href="connect.php">
-                    <div class="sidebar-item">
-                        Connect Account
-                    </div>
-                </a>
-                <a href="analytics.php">
-                    <div class="sidebar-item">
-                        Analytics
-                    </div>
-                </a>
-                <a href="settings.php">
-                    <div class="sidebar-item">
-                        Settings
-                    </div>
-                </a>
+                <div class="sidebar-item">
+                    <a href="index.php">Dashboard</a>
+                </div>
+                <div class="sidebar-current">
+                <a href="connect.php">Connect Account</a>
+                </div>
+                <div class="sidebar-item">
+                    <a href="analytics.php">Analytics</a>
+                </div>
+                <div class="sidebar-item">
+                    <a href="account.php">Account</a>
+                </div>
+                <div class="sidebar-item">
+                    <a href="settings.php">Settings</a>
+                </div>
                 <div class="sidebar-info">
                     Panorama v1.0.0 <br>
                     <a href="about:blank">About</a><br>
                     <a href="https://panorama-csce315.herokuapp.com/logout.php">Log Out</a>
                 </div>
             </div> 
-            <div class="main-content">
+            <div class="main-content" style="text-align:center">
                 <br>
                 <div class="title">Connect Account</div>
                 <div class="card">
