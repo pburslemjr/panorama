@@ -114,7 +114,7 @@ else{
                                     <h1><?php echo($twitterlikes); ?></h1>
                                     <br>
                                     <p>Retweets:</p>
-                                    <h1><?php echo($twitterlikes); ?></h1>
+                                    <h1><?php echo($twitterretweets); ?></h1>
                                 </div>
                             </div>
                         </th>
