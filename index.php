@@ -21,21 +21,26 @@ else{
                 <div class="sidebar-logo">
                     <img src="LogoBanner.png" width=100%>
                 </div>
-                <div class="sidebar-current">
-                    <a href="index.php">Dashboard</a>
-                </div>
-                <div class="sidebar-item">
-                <a href="connect.php">Connect Account</a>
-                </div>
-                <div class="sidebar-item">
-                    <a href="analytics.php">Analytics</a>
-                </div>
-                <div class="sidebar-item">
-                    <a href="account.php">Account</a>
-                </div>
-                <div class="sidebar-item">
-                    <a href="settings.php">Settings</a>
-                </div>
+                <a href="index.php">
+                    <div class="sidebar-item">  
+                        Dashboard
+                    </div>
+                </a>
+                <a href="connect.php">
+                    <div class="sidebar-item">
+                        Connect Account
+                    </div>
+                </a>
+                <a href="analytics.php">
+                    <div class="sidebar-item">
+                        Analytics
+                    </div>
+                </a>
+                <a href="settings.php">
+                    <div class="sidebar-item">
+                        Settings
+                    </div>
+                </a>
                 <div class="sidebar-info">
                     Panorama v1.0.0 <br>
                     <a href="about:blank">About</a><br>
