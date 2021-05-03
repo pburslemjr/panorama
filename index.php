@@ -50,12 +50,10 @@ else{
         $twitter = $_SESSION['users']['twitter'];
         
         $twitterlikes = shell_exec('python twitterlikes.py ' . escapeshellarg($twitter));
+        $twitterretweets = shell_exec('python twitterretweets.py ' . escapeshellarg($twitter));
         
 
-        $command = escapeshellcmd('python twitterlikes.py pburslemjr99');
-        $output = shell_exec($command);
-        echo("Twitter likes: $output \n");
-        echo(shell_exec($command));
+        
     }
     
     
@@ -107,14 +105,14 @@ else{
                     <tr>
                         <th>
                             <div class="card">
-                                <h4><b>Tweet Statistics</b></h4>
+                                <h4><b>Tweet Statistics (Past 10 posts)</b></h4>
                                 <img src="sampleTweet.jpg" alt="Avatar" style="width:100%">
                                 <div class="container">
                                     <p>Likes:</p>
                                     <h1><?php echo($twitterlikes); ?></h1>
                                     <br>
                                     <p>Retweets:</p>
-                                    <h1>4</h1>
+                                    <h1><?php echo($twitterretweets); ?></h1>
                                 </div>
                             </div>
                         </th>
