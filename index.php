@@ -5,8 +5,41 @@ header("location:login.php");
 exit;
 }
 else{
-   
     $name = $_SESSION['users']['username'];
+    include('config.php');
+    $getusersql ="SELECT * FROM public.accounts WHERE username = '".$name."';";
+    
+    $data = pg_query($db_connection,$getusersql); 
+    $userinfo = pg_fetch_assoc($data);
+    $login_check = pg_num_rows($data);
+    
+    
+    if($login_check != 1){ 
+        
+      echo("Error");
+      
+    }
+    else
+    {
+        $twitter_username = $userinfo["twitter"];
+        $facebook_username = $userinfo["facebook"];
+        $reddit_username = $userinfo["reddit"];
+        
+        if ($twitter_username != "n/a")
+        {
+            $_SESSION['users']['twitter'] = $twitter_username;
+        }
+        if ($facebook_username != "n/a")
+        {
+            $facebook_status = "Connected to account: $facebook_username";
+        }
+        if ($reddit_username != "n/a")
+        {
+            $reddit_status = "Connected to account: $reddit_username";
+        }
+    }
+
+   
     if(!isset($_SESSION['users']['twitter']))
     {
         $twitterlikes = "Account not connected!";
