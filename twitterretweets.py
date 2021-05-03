@@ -28,6 +28,6 @@ if __name__ == '__main__':
     total = 0
     user = sys.argv[1]
     api = get_twitter_client()
-    for status in tweepy.Cursor(api.home_timeline, screen_name=user, ).items(10):
+    for status in tweepy.Cursor(api.home_timeline, screen_name=user, ).items(3):
         total += status.retweet_count
     print(total)
