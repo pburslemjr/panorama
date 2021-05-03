@@ -50,7 +50,11 @@ else{
         $twitter = $_SESSION['users']['twitter'];
         
         $twitterlikes = shell_exec('twitterlikes.py ' . escapeshellarg($twitter));
-        echo("Twitter likes: $twitterlikes");
+        
+
+        $command = escapeshellcmd('python_script.py pburslemjr99');
+        $output = shell_exec($command);
+        echo("Twitter likes: $output");
     }
     
     
