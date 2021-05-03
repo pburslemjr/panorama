@@ -3,15 +3,21 @@
     session_start();
     include('config.php');
     $name = $_SESSION['users']['username'];
-    if(isset($_POST['tsubmit'])&&!empty($_POST['tsubmit'])){
-        
-        $twitteruser = $_POST['tuname'];
-        $sql = "UPDATE public.accounts SET twitter = '".$twitteruser."' WHERE username = '".$name."';";
 
     if(isset($_POST['rsubmit'])&&!empty($_POST['rsubmit'])){
     
         $reddituser = $_POST['runame'];
         $sql = "UPDATE public.accounts SET reddit = '".$reddituser."' WHERE username = '".$name."';";
+        pg_query($db_connection,$sql); 
+        $_SESSON['users']['twitter'] = $twitteruser;
+    }
+
+    if(isset($_POST['tsubmit'])&&!empty($_POST['tsubmit'])){
+        
+        $twitteruser = $_POST['tuname'];
+        $sql = "UPDATE public.accounts SET twitter = '".$twitteruser."' WHERE username = '".$name."';";
+
+    
 
     
     
@@ -115,7 +121,7 @@
                         <img src="reddit_icon.jpg" alt="Reddit" style="width:100%">
                         <h1>Reddit</h1>
                         <p class="title">Status: <?php echo($reddit_status);?></p>
-                        <label for="rname"><b>Username</b></label>
+                        <label for="runame"><b>Username</b></label>
                         <input type="text" placeholder="Enter Reddit Username" name="runame" required>
                         <input type="submit" name="rsubmit" class="Input">                 
                         
