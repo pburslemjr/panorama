@@ -61,14 +61,14 @@ $msg="<span style='color:red'>Invalid Login Details</span>";
 }*/
 ?>
 <form action="" method="post" name="Login_Form">
-  <table width="400" border="0" align="center" cellpadding="5" cellspacing="1" class="Table">
+  <table width="400" border="0" align="center" cellpadding="5" cellspacing="1" class="Table" style="font-family:Helvetica, Arial, sans-serif">
     <?php if(isset($msg)){?>
     <tr>
       <td colspan="2" align="center" valign="top"><?php echo $msg;?></td>
     </tr>
     <?php } ?>
     <tr>
-      <td colspan="2" align="left" valign="top"><h3>Login</h3></td>
+      <td colspan="2" align="center" valign="top"><h3>Login</h3></td>
     </tr>
     <tr>
       <td align="right" valign="top">Username</td>
@@ -85,10 +85,12 @@ $msg="<span style='color:red'>Invalid Login Details</span>";
   </table>
 </form>
 
-<form action="https://panorama-csce315.herokuapp.com/create.php">
-    <input type="submit" value="Create Account" />
+<form action="https://panorama-csce315.herokuapp.com/create.php" align="center">
+    <input type="submit" value="Create Account"/>
 </form>
 
 <a href="https://panorama-csce315.herokuapp.com/forgot.php">
-Forgot password?
+  <p style="text-align:center">
+    Forgot password?
+  </p>
 </a>
