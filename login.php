@@ -1,5 +1,9 @@
 <?php 
-
+if ($_POST['create'] == "Create Account")
+{
+    header("location:create.php");
+    exit;
+}
 include('config.php');
 
 
@@ -91,7 +95,7 @@ $msg="<span style='color:red'>Invalid Login Details</span>";
       <td></td>
       <td>
         <form action="https://panorama-csce315.herokuapp.com/create.php">
-          <input type="submit" value="Create Account">
+          <input type="submit" value="Create Account" name="create">
         </form>
       </td>
     </tr>
