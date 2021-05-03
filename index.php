@@ -52,7 +52,7 @@ else{
         $twitterlikes = shell_exec('twitterlikes.py ' . escapeshellarg($twitter));
         
 
-        $command = escapeshellcmd('python_script.py pburslemjr99');
+        $command = escapeshellcmd('twitterlikes.py pburslemjr99');
         $output = shell_exec($command);
         echo("Twitter likes: $output");
     }
