@@ -7,6 +7,7 @@
         $twitteruser = $_POST['tuname'];
         $sql = "INSERT INTO public.accounts (username, twitter)
     VALUES ('".$usern."', '".$twitteruser."');";
+    echo($sql);
     pg_query($db_connection,$sql); 
     }
     $twitter_status = "Not connected";
