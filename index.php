@@ -7,6 +7,19 @@ exit;
 else{
    
     $name = $_SESSION['users']['username'];
+    if(!isset($_SESSION['users']['twitter']))
+    {
+        $twitterlikes = "Account not connected!";
+
+    }
+    else
+    {
+        $twitter = $_SESSION['users']['twitter'];
+        $twitterlikes = shell_exec('twitterlikes.py ' . escapeshellarg($twitter));
+    }
+    
+    
+
 }
 ?>
 
@@ -58,7 +71,7 @@ else{
                                 <img src="sampleTweet.jpg" alt="Avatar" style="width:100%">
                                 <div class="container">
                                     <p>Likes:</p>
-                                    <h1>21</h1>
+                                    <h1><?php echo($twitterlikes); ?></h1>
                                     <br>
                                     <p>Retweets:</p>
                                     <h1>4</h1>
