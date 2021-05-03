@@ -132,11 +132,11 @@ else{
                                 <h4><b>Reddit Statistics</b></h4>
                                 <img src="sampleReddit.jpg" alt="Avatar" style="width:100%">
                                 <div class="container">
-                                    <p>Total Account Karma:</p>
+                                    <p>Karma:</p>
                                     <h1><?php echo($redditkarma); ?></h1>
                                     <br>
                                     <p>Account Upvote Ratio:</p>
-                                    <h1><?php echo($redditratio); ?></h1>
+                                    <h1><?php echo($redditratio); ?>%</h1>
                                 </div>
                             </div>
                         </th>
