@@ -2,6 +2,13 @@
 <?php 
     session_start();
     include('config.php');
+    if(isset($_POST['tsubmit'])&&!empty($_POST['tsubmit'])){
+        
+        $twitteruser = $_POST['tuname'];
+        $sql = "INSERT INTO public.accounts (username, twitter)
+    VALUES ('".$usern."', '".$twitteruser."');";
+    pg_query($db_connection,$sql); 
+    }
     $twitter_status = "Not connected";
     $facebook_status = "Not connected";
     $reddit_status = "Not connected";
@@ -74,14 +81,17 @@
             <div class="main-content" style="text-align:center">
                 <br>
                 <div class="title">Connect Account</div>
-                <div class="card">
-                    <img src="tSquare.png" alt="Twitter" style="width:100%">
-                    <h1>Twitter</h1>
-                    <p class="title">Status: <?php echo($twitter_status);?></p>
-                    
-                    <a href="#">Connect Now</a>                   
-                    
-                </div>
+                <form action="https://panorama-csce315.herokuapp.com/connect.php" method="post">
+                    <div class="card">
+                        <img src="tSquare.png" alt="Twitter" style="width:100%">
+                        <h1>Twitter</h1>
+                        <p class="title">Status: <?php echo($twitter_status);?></p>
+                        <label for="uname"><b>Username</b></label>
+                        <input type="text" placeholder="Enter Twitter Username" name="tuname" required>
+                        <button type="submit" name="tsubmit">Connect</button>                  
+                        
+                    </div>
+                </form>
                 <div class="card">
                     <img src="fSquare.png" alt="Facebook" style="width:100%">
                     <h1>Facebook</h1>
