@@ -117,4 +117,7 @@ html, body{
     margin: auto;
     text-align: center;
     display: inline-block;
+    transition: 0.3s;
+    border-radius: 10px; /* 5px rounded corners */
   }
+
