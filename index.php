@@ -141,7 +141,7 @@ else{
                             </div>
                         </th>
                     </tr>
-                    <tr class="dashboard-button-label">
+                    <!-- <tr class="dashboard-button-label">
                         <td>
                             Link 1
                         </td>
@@ -151,7 +151,7 @@ else{
                         <td>
                             <p id="testAPI"></p>
                         </td>
-                    </tr>
+                    </tr> -->
                 </table>
             </div>
         </div>
