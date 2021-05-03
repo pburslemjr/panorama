@@ -117,7 +117,7 @@ else{
                         <th>
                             <div class="card">
                                 <h4><b>Tweet Statistics (Past 10 posts)</b></h4>
-                                <img src="sampleTweet.jpg" alt="Avatar" style="width:100%">
+                                <img src="twitter_icon.jpg" alt="Avatar" style="width:100%">
                                 <div class="container">
                                     <p>Likes:</p>
                                     <h1><?php echo($twitterlikes); ?></h1>
@@ -130,7 +130,7 @@ else{
                         <th>
                             <div class="card">
                                 <h4><b>Reddit Statistics</b></h4>
-                                <img src="sampleReddit.jpg" alt="Avatar" style="width:100%">
+                                <img src="reddit_icon.jpg" alt="Avatar" style="width:100%">
                                 <div class="container">
                                     <p>Karma:</p>
                                     <h1><?php echo($redditkarma); ?></h1>
