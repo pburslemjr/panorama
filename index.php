@@ -14,7 +14,6 @@ else{
     <head>
         <title>Panorama</title>
         <link rel="stylesheet" href="styles.css">
-        <script src="getUserPosts.js" type="text/javascript"></script>
     </head>
     <body>
         <div class="main-body">
