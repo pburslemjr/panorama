@@ -1,5 +1,5 @@
 import tweepy, sys
-import pandas as pd
+
 
 def twitter_auth():
     try:
