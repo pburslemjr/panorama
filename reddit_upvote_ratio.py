@@ -14,6 +14,7 @@ user = sys.argv[1]
 count = 0
 total = 0.0
 for item in reddit.redditor(user).submissions.top('all'):
+    print(item.upvote_ratio)
     total = total + item.upvote_ratio
     count = count + 1
 
