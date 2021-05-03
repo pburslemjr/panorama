@@ -22,6 +22,7 @@ else{
     else
     {
         $twitter_username = $userinfo["twitter"];
+        echo($twitter_username);
         $facebook_username = $userinfo["facebook"];
         $reddit_username = $userinfo["reddit"];
         
@@ -112,7 +113,7 @@ else{
                                     <h1><?php echo($twitterlikes); ?></h1>
                                     <br>
                                     <p>Retweets:</p>
-                                    <h1><?php echo($twitterretweets); ?></h1>
+                                    <h1><?php echo($twitterlikes); ?></h1>
                                 </div>
                             </div>
                         </th>
