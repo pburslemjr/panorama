@@ -89,7 +89,7 @@
                         <p class="title">Status: <?php echo($twitter_status);?></p>
                         <label for="uname"><b>Username</b></label>
                         <input type="text" placeholder="Enter Twitter Username" name="tuname" required>
-                        <button type="submit" name="tsubmit">Connect</button>                  
+                        <input type="submit" name="tsubmit" class="Input">                
                         
                     </div>
                 </form>
